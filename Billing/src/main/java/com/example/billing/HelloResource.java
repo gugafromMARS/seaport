@@ -1,4 +1,4 @@
-package com.example.shipmanagement;
+package com.example.billing;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
