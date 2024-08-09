@@ -10,6 +10,7 @@
         <module name="CargoManagement" />
         <module name="AccessControl" />
         <module name="Schedule" />
+        <module name="Billing" />
       </profile>
     </annotationProcessing>
   </component>
