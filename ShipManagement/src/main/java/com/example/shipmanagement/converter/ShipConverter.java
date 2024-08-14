@@ -6,6 +6,7 @@ import com.example.shipmanagement.dto.ShipDto;
 import com.example.shipmanagement.model.Ship;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class ShipConverter {

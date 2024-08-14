@@ -26,6 +26,6 @@ public class ShipController {
     @Path("/{mmsi}")
     @Produces("application/json")
     public Response get(@PathParam("mmsi") int mmsi){
-        return Response.ok(service.getShipByMMSI(mmsi));
+        return Response.ok(service.getShipByMMSI(mmsi)).build();
     }
 }

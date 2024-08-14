@@ -2,6 +2,8 @@ package com.example.shipmanagement.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name ="ship")
@@ -16,6 +18,7 @@ public class Ship {
     private ShipType shipType;
     private String flag;
     private String ownerEmail;
+
 
 
     public Long getId() {
@@ -74,6 +77,7 @@ public class Ship {
         this.ownerEmail = ownerEmail;
     }
 
+
     public static ShipBuilder builder(){
         return new ShipBuilder();
     }
@@ -101,12 +105,12 @@ public class Ship {
         }
 
         public ShipBuilder withShipType(String shipType){
-            if(shipType == null){
+            if(shipType.isEmpty()){
                 ship.setShipType(ShipType.CRUISE);
                 return this;
             }
             for (ShipType st: ShipType.values()){
-                if(st.name().equals(shipType)){
+                if(st.name().equals(shipType.toUpperCase())){
                     ship.setShipType(st);
                     return this;
                 }
