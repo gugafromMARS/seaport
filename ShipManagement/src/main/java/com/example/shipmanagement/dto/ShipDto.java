@@ -3,6 +3,8 @@ package com.example.shipmanagement.dto;
 import com.example.shipmanagement.model.Ship;
 import com.example.shipmanagement.model.ShipType;
 
+import java.util.List;
+
 public class ShipDto {
 
     private Long id;
@@ -12,6 +14,7 @@ public class ShipDto {
     private ShipType shipType;
     private String flag;
     private String ownerEmail;
+    private List<TripShipDto> tripList;
 
 
     public Long getId() {
@@ -70,6 +73,14 @@ public class ShipDto {
         this.ownerEmail = ownerEmail;
     }
 
+    public List<TripShipDto> getTripList() {
+        return tripList;
+    }
+
+    public void setTripList(List<TripShipDto> tripList) {
+        this.tripList = tripList;
+    }
+
     public static ShipDtoBuilder builder(){
         return new ShipDtoBuilder();
     }
@@ -107,6 +118,11 @@ public class ShipDto {
         }
         public ShipDtoBuilder withOwnerEmail(String ownerEmail){
             shipDto.setOwnerEmail(ownerEmail);
+            return this;
+        }
+
+        public ShipDtoBuilder withTrips(List<TripShipDto> trips){
+            shipDto.setTripList(trips);
             return this;
         }
 
