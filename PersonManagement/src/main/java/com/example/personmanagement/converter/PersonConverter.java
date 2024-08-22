@@ -23,7 +23,6 @@ public class PersonConverter {
 
     public PersonDto toDto(Person person){
         return PersonDto.builder()
-                .withId(person.getId())
                 .withName(person.getName())
                 .withCC(person.getCc())
                 .withEmail(person.getEmail())

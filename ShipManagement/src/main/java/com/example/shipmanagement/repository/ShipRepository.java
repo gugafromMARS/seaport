@@ -6,6 +6,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 
@@ -29,5 +31,6 @@ public class ShipRepository {
         }
         return ships.get(0);
     }
+
 
 }
