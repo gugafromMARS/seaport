@@ -5,18 +5,14 @@ package com.example.personmanagement.dto;
 
 public class PersonDto {
 
-    private Long id;
+
     private String name;
     private int cc;
     private String email;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
+
 
     public String getName() {
         return name;
@@ -56,13 +52,10 @@ public class PersonDto {
             this.personDto = new PersonDto();
         }
 
-        public PersonDtoBuilder withId(Long id){
-            personDto.setId(id);
-            return this;
-        }
+
 
         public PersonDtoBuilder withName(String name){
-            personDto.setEmail(name);
+            personDto.setName(name);
             return this;
         }
         public PersonDtoBuilder withCC(int cc){

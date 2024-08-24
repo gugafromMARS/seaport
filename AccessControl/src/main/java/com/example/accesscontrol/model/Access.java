@@ -12,7 +12,7 @@ public class Access {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    private String
+    private String credentials;
 
     public Long getId() {
         return id;
