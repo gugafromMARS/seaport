@@ -57,6 +57,13 @@ public class TripRepository {
                 .getResultList();
     }
 
+    // neste metodo como e uma collection dentro da entidade temos de usar o join, para associar a personList que esta dentro da trip a class personDto
+    public List<Trip> getTripFromCC(int cc){
+        return entityManager.createQuery("FROM Trip t JOIN t.personList p WHERE p.cc = :cc", Trip.class)
+                .setParameter("cc", cc)
+                .getResultList();
+    }
+
     public Trip getTripByShipNumberAndDate(TripCreateDto tripCreateDto) {
         if (tripCreateDto.getDate().contains("-")) {
             String[] date = tripCreateDto.getDate().split("-");

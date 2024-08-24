@@ -48,5 +48,9 @@ public class TripConverter {
         return trips.stream().map(trip -> toTripShipDto(trip)).collect(Collectors.toList());
     }
 
+    public List<TripPersonDto> fromCcOfPerson(List<Trip> trips){
+        return trips.stream().map(trip -> toTripPersonDto(trip)).collect(Collectors.toList());
+    }
+
 
 }

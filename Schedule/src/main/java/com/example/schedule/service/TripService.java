@@ -55,9 +55,8 @@ public class TripService {
         return response.readEntity(PersonDto.class);
     }
 
-    public TripPersonDto getTripByPerson(int cc) {
-
-        return null;
+    public List<TripPersonDto> getTripByPerson(int cc) {
+        return tripConverter.fromCcOfPerson(tripRepository.getTripFromCC(cc));
     }
 
     public TripDto updateTrip(TripAddPersonDto tripAddPersonDto) {

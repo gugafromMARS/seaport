@@ -55,6 +55,7 @@ public class TripController {
 
     @GET
     @Path("/search/person/{ccnumber}")
+    @Produces("application/json")
     public Response getForPerson(@PathParam("ccnumber") int cc){
         return Response.ok(tripService.getTripByPerson(cc)).build();
     }
