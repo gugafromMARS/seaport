@@ -14,15 +14,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: change person entity in person microservice, add one more column for nif.">
+    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: nif validator checker in person microservice and add a column in person entity for nif field.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/converter/PersonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/converter/PersonConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonCreateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/service/PersonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/dto/PersonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/dto/PersonDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/dto/TripShipDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/dto/TripShipDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +177,7 @@
       <updated>1723654291097</updated>
       <workItem from="1723654292124" duration="29549000" />
       <workItem from="1724170770169" duration="33753000" />
-      <workItem from="1724662542829" duration="2261000" />
+      <workItem from="1724662542829" duration="4215000" />
     </task>
     <task id="LOCAL-00001" summary="Add: schedule microservice implementation">
       <option name="closed" value="true" />
@@ -194,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724343927131</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add: nif validator checker in person microservice and add a column in person entity for nif field.">
+      <option name="closed" value="true" />
+      <created>1724668179583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724668179583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +203,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add: schedule microservice implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: schedule microservice implementation" />
+    <MESSAGE value="Add: nif validator checker in person microservice and add a column in person entity for nif field." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: nif validator checker in person microservice and add a column in person entity for nif field." />
   </component>
 </project>
