@@ -10,14 +10,13 @@ import javax.inject.Inject;
 @ApplicationScoped
 public class PersonConverter {
 
-
-
     public Person fromCreateDto(PersonCreateDto personCreateDto){
         return Person.builder()
                 .withName(personCreateDto.getName())
                 .withAge(personCreateDto.getAge())
                 .withCC(personCreateDto.getCc())
                 .withEmail(personCreateDto.getEmail())
+                .withNif(personCreateDto.getNif())
                 .build();
     }
 
@@ -26,6 +25,7 @@ public class PersonConverter {
                 .withName(person.getName())
                 .withCC(person.getCc())
                 .withEmail(person.getEmail())
+
                 .build();
     }
 }

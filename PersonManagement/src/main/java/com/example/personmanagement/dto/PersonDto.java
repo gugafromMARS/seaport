@@ -9,8 +9,7 @@ public class PersonDto {
     private String name;
     private int cc;
     private String email;
-
-
+    private int nif;
 
 
 
@@ -38,7 +37,13 @@ public class PersonDto {
     public void setEmail(String email) {
         this.email = email;
     }
+    public int getNif() {
+        return nif;
+    }
 
+    public void setNif(int nif) {
+        this.nif = nif;
+    }
 
 
     public static PersonDtoBuilder builder(){
@@ -67,6 +72,10 @@ public class PersonDto {
             return this;
         }
 
+        public PersonDtoBuilder withNif(int nif){
+            personDto.setNif(nif);
+            return this;
+        }
 
         public PersonDto build(){
             return personDto;
