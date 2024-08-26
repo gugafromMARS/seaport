@@ -7,7 +7,6 @@ public class TripShipDto {
 
     private Long id;
     private String date;
-
     private List<PersonDto> personDtoList;
 
     public Long getId() {

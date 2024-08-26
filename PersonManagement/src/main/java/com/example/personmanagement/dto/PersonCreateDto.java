@@ -7,6 +7,8 @@ public class PersonCreateDto {
     private int cc;
     private String email;
 
+    private int nif;
+
 
     public String getName() {
         return name;
@@ -18,6 +20,14 @@ public class PersonCreateDto {
 
     public int getAge() {
         return age;
+    }
+
+    public int getNif() {
+        return nif;
+    }
+
+    public void setNif(int nif) {
+        this.nif = nif;
     }
 
     public void setAge(int age) {

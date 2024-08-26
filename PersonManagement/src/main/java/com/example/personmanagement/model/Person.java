@@ -13,6 +13,7 @@ public class Person {
     private int age;
     private int cc;
     private String email;
+    private int nif;
 
 
 
@@ -56,6 +57,13 @@ public class Person {
         this.email = email;
     }
 
+    public int getNif() {
+        return nif;
+    }
+
+    public void setNif(int nif) {
+        this.nif = nif;
+    }
 
     public static PersonBuilder builder(){
         return new PersonBuilder();
@@ -87,6 +95,10 @@ public class Person {
             return this;
         }
 
+        public PersonBuilder withNif(int nif){
+            person.setNif(nif);
+            return this;
+        }
 
         public Person build(){
             return person;

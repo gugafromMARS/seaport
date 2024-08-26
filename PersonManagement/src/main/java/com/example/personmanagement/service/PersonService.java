@@ -27,9 +27,31 @@ public class PersonService {
         if(existingPerson != null){
             throw new WebApplicationException("Person already exist", Response.Status.BAD_REQUEST);
         }
-        existingPerson = personConverter.fromCreateDto(personCreateDto);
-        personRepository.save(existingPerson);
-        return personConverter.toDto(existingPerson);
+        if(checkNIF(personCreateDto.getNif())){
+            existingPerson = personConverter.fromCreateDto(personCreateDto);
+            personRepository.save(existingPerson);
+            return personConverter.toDto(existingPerson);
+        } else{
+            throw new WebApplicationException("Nif is not valid", Response.Status.BAD_REQUEST);
+        }
+    }
+
+    private boolean checkNIF(int nif){
+        String[] nifReformatted = String.valueOf(nif).split("");
+        int total = 0;
+        int nifSize = nifReformatted.length;
+        for(int i = 0; i < 8; i++){
+            total += Integer.valueOf(nifReformatted[i]) * nifSize;
+            nifSize--;
+        }
+        int rest = total % 11;
+        int controlDigit;
+        if(rest == 0 || rest == 1){
+            controlDigit = 0;
+        }else {
+            controlDigit = 11 - rest;
+        }
+        return Integer.valueOf(nifReformatted[8]) == controlDigit;
     }
 
     public PersonDto getPerson(int ccNumber) {
