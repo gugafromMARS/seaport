@@ -15,7 +15,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: nif validator checker in person microservice and add a column in person entity for nif field.">
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/controller/InvoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/converter/InvoiceConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/InvoiceCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/InvoiceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/model/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/repository/InvoiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/service/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/ScheduleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/HelloResource.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +67,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;task__&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;task/billing__implementation&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/goncalocravo/Desktop/Coding/Projects/Seaport&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -178,6 +188,7 @@
       <workItem from="1723654292124" duration="29549000" />
       <workItem from="1724170770169" duration="33753000" />
       <workItem from="1724662542829" duration="4215000" />
+      <workItem from="1724769941203" duration="3019000" />
     </task>
     <task id="LOCAL-00001" summary="Add: schedule microservice implementation">
       <option name="closed" value="true" />
