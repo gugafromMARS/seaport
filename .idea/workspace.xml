@@ -14,18 +14,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: nif validator checker in person microservice and add a column in person entity for nif field.">
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/controller/InvoiceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/converter/InvoiceConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/InvoiceCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/InvoiceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/model/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/repository/InvoiceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/service/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: Cargo management basic structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/ScheduleApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -67,15 +66,16 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;task/billing__implementation&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;task/cargo__management__implementation&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/goncalocravo/Desktop/Coding/Projects/Seaport&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.14450866&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;780c462e85ba4399a5d42e88f69a15ca&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -189,6 +189,9 @@
       <workItem from="1724170770169" duration="33753000" />
       <workItem from="1724662542829" duration="4215000" />
       <workItem from="1724769941203" duration="3019000" />
+      <workItem from="1724936028881" duration="13365000" />
+      <workItem from="1725018174736" duration="628000" />
+      <workItem from="1725284214682" duration="18653000" />
     </task>
     <task id="LOCAL-00001" summary="Add: schedule microservice implementation">
       <option name="closed" value="true" />
@@ -206,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724668179583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add: Cargo management basic structure">
+      <option name="closed" value="true" />
+      <created>1724950321963</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724950321963</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +226,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add: schedule microservice implementation" />
     <MESSAGE value="Add: nif validator checker in person microservice and add a column in person entity for nif field." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: nif validator checker in person microservice and add a column in person entity for nif field." />
+    <MESSAGE value="Add: Invoice implementation" />
+    <MESSAGE value="Add: Cargo management basic structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: Cargo management basic structure" />
   </component>
 </project>
