@@ -3,6 +3,7 @@ package com.example.cargomanagement.dto;
 import com.example.cargomanagement.model.CargoType;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 public class CargoDto {
@@ -15,6 +16,7 @@ public class CargoDto {
     private String estimatedArrivalDate;
     private String estimatedDepartureDate;
     private ShipDto shipDto;
+    private UUID cargoNumber;
 
 
     public Long getId() {
@@ -81,8 +83,17 @@ public class CargoDto {
         this.shipDto = shipDto;
     }
 
+
     public static CargoDtoBuilder builder(){
         return new CargoDtoBuilder();
+    }
+
+    public UUID getCargoNumber() {
+        return cargoNumber;
+    }
+
+    public void setCargoNumber(UUID cargoNumber) {
+        this.cargoNumber = cargoNumber;
     }
 
     public static class CargoDtoBuilder{
@@ -120,6 +131,11 @@ public class CargoDto {
         }
         public CargoDtoBuilder withDepartureDate(LocalDate date){
             cargoDto.setEstimatedDepartureDate(date.getYear() + "-" + date.getMonthValue() + "-" + date.getDayOfMonth());
+            return this;
+        }
+
+        public CargoDtoBuilder withUUID(UUID uuid){
+            cargoDto.setCargoNumber(uuid);
             return this;
         }
 

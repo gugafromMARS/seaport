@@ -5,6 +5,7 @@ import com.example.cargomanagement.dto.ShipDto;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Entity
 @Table(name = "cargo")
@@ -16,6 +17,7 @@ public class Cargo {
     private double weight;
     private double volume;
     private CargoType cargoType;
+    private UUID cargoNumber;
     private String origin;
     private LocalDate estimatedArrivalDate;
     private LocalDate estimatedDepartureDate;
@@ -60,6 +62,14 @@ public class Cargo {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public UUID getCargoNumber() {
+        return cargoNumber;
+    }
+
+    public void setCargoNumber(UUID cargoNumber) {
+        this.cargoNumber = cargoNumber;
     }
 
     public LocalDate getEstimatedArrivalDate() {
@@ -144,6 +154,11 @@ public class Cargo {
                 cargo.setEstimatedDepartureDate(LocalDate.of(Integer.parseInt(dateSplit[0]), Integer.parseInt(dateSplit[1]), Integer.parseInt(dateSplit[2])));
                 return this;
             }
+        }
+
+        public CargoBuilder withCargoNumber(UUID uuid){
+            cargo.setCargoNumber(uuid);
+            return this;
         }
 
         public CargoBuilder withShip(ShipDto ship){

@@ -14,25 +14,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: Invoice implementation">
-      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/email/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/ShipDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/ShipType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/CargoType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" afterDir="false" />
+    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: Cargo management basic structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Billing/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/BillingApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/HelloResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Billing/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/CargoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +75,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.14450866&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;780c462e85ba4399a5d42e88f69a15ca&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -197,7 +189,9 @@
       <workItem from="1724170770169" duration="33753000" />
       <workItem from="1724662542829" duration="4215000" />
       <workItem from="1724769941203" duration="3019000" />
-      <workItem from="1724936028881" duration="5707000" />
+      <workItem from="1724936028881" duration="13365000" />
+      <workItem from="1725018174736" duration="628000" />
+      <workItem from="1725284214682" duration="18653000" />
     </task>
     <task id="LOCAL-00001" summary="Add: schedule microservice implementation">
       <option name="closed" value="true" />
@@ -215,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724668179583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add: Cargo management basic structure">
+      <option name="closed" value="true" />
+      <created>1724950321963</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724950321963</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +227,7 @@
     <MESSAGE value="Add: schedule microservice implementation" />
     <MESSAGE value="Add: nif validator checker in person microservice and add a column in person entity for nif field." />
     <MESSAGE value="Add: Invoice implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: Invoice implementation" />
+    <MESSAGE value="Add: Cargo management basic structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: Cargo management basic structure" />
   </component>
 </project>

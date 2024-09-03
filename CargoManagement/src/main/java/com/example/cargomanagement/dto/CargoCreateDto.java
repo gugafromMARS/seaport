@@ -1,12 +1,17 @@
 package com.example.cargomanagement.dto;
+
+import java.util.UUID;
+
 public class CargoCreateDto {
     private double weight;
     private double volume;
     private String cargoType;
     private String origin;
+
+    private final UUID uuid = UUID.randomUUID();
     private String estimatedArrivalDate;
     private String estimatedDepartureDate;
-    private Long shipId;
+    private int mmsi;
 
     public double getWeight() {
         return weight;
@@ -32,7 +37,11 @@ public class CargoCreateDto {
         return estimatedDepartureDate;
     }
 
-    public Long getShipId() {
-        return shipId;
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public int getMmsi() {
+        return mmsi;
     }
 }
