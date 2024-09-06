@@ -17,6 +17,7 @@ public class PersonConverter {
                 .withCC(personCreateDto.getCc())
                 .withEmail(personCreateDto.getEmail())
                 .withNif(personCreateDto.getNif())
+                .withRole(personCreateDto.getRole())
                 .build();
     }
 
@@ -24,8 +25,9 @@ public class PersonConverter {
         return PersonDto.builder()
                 .withName(person.getName())
                 .withCC(person.getCc())
+                .withNif(person.getNif())
                 .withEmail(person.getEmail())
-
+                .withRole(person.getRole())
                 .build();
     }
 }

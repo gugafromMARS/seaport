@@ -1,7 +1,7 @@
 package com.example.personmanagement.dto;
 
 
-
+import com.example.personmanagement.model.Role;
 
 public class PersonDto {
 
@@ -10,7 +10,7 @@ public class PersonDto {
     private int cc;
     private String email;
     private int nif;
-
+    private String role;
 
 
     public String getName() {
@@ -45,6 +45,13 @@ public class PersonDto {
         this.nif = nif;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public static PersonDtoBuilder builder(){
         return new PersonDtoBuilder();
@@ -56,8 +63,6 @@ public class PersonDto {
         public PersonDtoBuilder() {
             this.personDto = new PersonDto();
         }
-
-
 
         public PersonDtoBuilder withName(String name){
             personDto.setName(name);
@@ -74,6 +79,11 @@ public class PersonDto {
 
         public PersonDtoBuilder withNif(int nif){
             personDto.setNif(nif);
+            return this;
+        }
+
+        public PersonDtoBuilder withRole(Role role){
+            personDto.setRole(role.name());
             return this;
         }
 
