@@ -14,8 +14,7 @@ public class Person {
     private int cc;
     private String email;
     private int nif;
-
-
+    private Role role;
 
     public Long getId() {
         return id;
@@ -65,6 +64,14 @@ public class Person {
         this.nif = nif;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     public static PersonBuilder builder(){
         return new PersonBuilder();
     }
@@ -92,6 +99,21 @@ public class Person {
 
         public PersonBuilder withEmail(String email){
             person.setEmail(email);
+            return this;
+        }
+
+        public PersonBuilder withRole(String role){
+            if(role == null){
+                person.setRole(Role.EXTERN);
+                return this;
+            }
+            for(Role r : Role.values()){
+                if(r.name().equals(role)){
+                    person.setRole(r);
+                    return this;
+                }
+            }
+            person.setRole(Role.EXTERN);
             return this;
         }
 

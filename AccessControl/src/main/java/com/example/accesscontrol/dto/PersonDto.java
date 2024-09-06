@@ -1,18 +1,15 @@
-package com.example.schedule.dto;
+package com.example.accesscontrol.dto;
 
 
 import javax.persistence.Embeddable;
 
-
 @Embeddable
 public class PersonDto {
-
     private String name;
     private int cc;
     private String email;
     private int nif;
     private String role;
-
 
 
     public String getName() {

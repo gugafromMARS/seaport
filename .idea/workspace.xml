@@ -14,16 +14,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: Cargo management basic structure">
+    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: Cargo management implementation and persistence.xml edit.">
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/controller/AccessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/converter/AccessConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/dto/AccessCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/dto/AccessDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/dto/AccessEntryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/dto/AccessOutDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/dto/PersonDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/repository/AccessRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/service/AccessService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/model/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/controller/CargoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/converter/CargoConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoCreateDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/dto/CargoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/model/Cargo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/AccessApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/HelloResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/model/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/model/Access.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccessControl/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AccessControl/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/converter/PersonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/converter/PersonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/dto/PersonDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/PersonManagement/src/main/java/com/example/personmanagement/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/dto/PersonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/dto/PersonDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,24 +73,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;task/cargo__management__implementation&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/goncalocravo/Desktop/Coding/Projects/Seaport&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.14450866&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;780c462e85ba4399a5d42e88f69a15ca&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "task/access__control__implementation__v2",
+    "last_opened_file_path": "/Users/goncalocravo/Desktop/Coding/Projects/Seaport",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.14450866",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "780c462e85ba4399a5d42e88f69a15ca",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="JBoss/WildFly 13.0.0.Final1" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 13.0.0.Final1" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />

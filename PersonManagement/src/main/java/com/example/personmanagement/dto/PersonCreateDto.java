@@ -6,7 +6,7 @@ public class PersonCreateDto {
     private int age;
     private int cc;
     private String email;
-
+    private String role;
     private int nif;
 
 
@@ -32,6 +32,14 @@ public class PersonCreateDto {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public int getCc() {
