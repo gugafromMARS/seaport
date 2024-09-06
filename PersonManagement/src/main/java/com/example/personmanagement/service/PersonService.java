@@ -6,15 +6,12 @@ import com.example.personmanagement.dto.PersonDto;
 import com.example.personmanagement.model.Person;
 import com.example.personmanagement.repository.PersonRepository;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 
-@ApplicationScoped
+@Stateless
 public class PersonService {
 
     @Inject

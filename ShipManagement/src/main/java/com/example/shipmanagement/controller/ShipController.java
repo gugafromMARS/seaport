@@ -4,6 +4,7 @@ package com.example.shipmanagement.controller;
 import com.example.shipmanagement.dto.ShipCreateDto;
 import com.example.shipmanagement.service.ShipService;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -12,8 +13,14 @@ import java.net.URI;
 @Path("/ship")
 public class ShipController {
 
-    @Inject
+    @EJB
     private ShipService service;
+
+    public ShipController(ShipService service) {
+        this.service = service;
+    }
+    public ShipController() {
+    }
 
     @POST
     @Consumes("application/json")

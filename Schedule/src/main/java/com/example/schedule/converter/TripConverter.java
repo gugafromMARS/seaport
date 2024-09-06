@@ -4,11 +4,12 @@ package com.example.schedule.converter;
 import com.example.schedule.dto.*;
 import com.example.schedule.model.Trip;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ApplicationScoped
+@Stateless
 public class TripConverter {
 
     public Trip fromCreateDto(TripCreateDto tripCreateDto, ShipDto shipDto){

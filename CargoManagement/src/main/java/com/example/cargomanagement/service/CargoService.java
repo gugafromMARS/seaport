@@ -8,7 +8,8 @@ import com.example.cargomanagement.dto.ShipDto;
 import com.example.cargomanagement.model.Cargo;
 import com.example.cargomanagement.repository.CargoRepository;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
@@ -20,13 +21,19 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@ApplicationScoped
+@Stateless
 public class CargoService {
 
-    @Inject
-    private CargoRepository cargoRepository;
-    @Inject
-    private CargoConverter converter;
+    @EJB
+    private final CargoRepository cargoRepository;
+    @EJB
+    private final CargoConverter converter;
+
+    public CargoService(CargoRepository cargoRepository, CargoConverter converter) {
+        this.cargoRepository = cargoRepository;
+        this.converter = converter;
+    }
+
     public CargoDto createCargo(CargoCreateDto cargoCreateDto) {
         Cargo existingCargo = cargoRepository.getCargoByUUID(cargoCreateDto.getUuid());
         if(existingCargo != null){

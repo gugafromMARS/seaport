@@ -3,6 +3,7 @@ package com.example.billing.repository;
 
 import com.example.billing.model.Invoice;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,7 +12,7 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@ApplicationScoped
+@Stateless
 public class InvoiceRepository {
 
     @PersistenceContext

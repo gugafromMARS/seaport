@@ -5,9 +5,9 @@ import com.example.billing.dto.InvoiceCreateDto;
 import com.example.billing.dto.InvoiceDto;
 import com.example.billing.model.Invoice;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 
-@ApplicationScoped
+@Stateless
 public class InvoiceConverter {
 
 

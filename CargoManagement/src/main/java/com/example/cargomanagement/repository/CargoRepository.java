@@ -3,7 +3,7 @@ package com.example.cargomanagement.repository;
 import com.example.cargomanagement.model.Cargo;
 import com.example.cargomanagement.model.CargoType;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.EJB;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
 
-@ApplicationScoped
+@EJB
 public class CargoRepository {
 
     @PersistenceContext

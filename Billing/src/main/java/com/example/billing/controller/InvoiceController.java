@@ -4,6 +4,8 @@ package com.example.billing.controller;
 import com.example.billing.dto.InvoiceCreateDto;
 import com.example.billing.service.InvoiceService;
 
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,8 +16,15 @@ import java.net.URI;
 @Path("/invoice")
 public class InvoiceController {
 
-    @Inject
+    @EJB
     private InvoiceService invoiceService;
+
+    public InvoiceController() {
+    }
+
+    public InvoiceController(InvoiceService invoiceService) {
+        this.invoiceService = invoiceService;
+    }
 
     @POST
     public Response create(InvoiceCreateDto invoiceCreateDto){

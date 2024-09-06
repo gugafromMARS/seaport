@@ -7,6 +7,8 @@ import com.example.billing.dto.InvoiceDto;
 import com.example.billing.model.Invoice;
 import com.example.billing.repository.InvoiceRepository;
 
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
@@ -14,13 +16,18 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ApplicationScoped
+@Stateless
 public class InvoiceService {
 
-    @Inject
-    private InvoiceRepository invoiceRepository;
-    @Inject
-    private InvoiceConverter invoiceConverter;
+    @EJB
+    private final InvoiceRepository invoiceRepository;
+    @EJB
+    private final InvoiceConverter invoiceConverter;
+
+    public InvoiceService(InvoiceRepository invoiceRepository, InvoiceConverter invoiceConverter) {
+        this.invoiceRepository = invoiceRepository;
+        this.invoiceConverter = invoiceConverter;
+    }
 
     public InvoiceDto createInvoice(InvoiceCreateDto invoiceCreateDto) {
         if(invoiceCreateDto.getDate().isEmpty() || invoiceCreateDto.getPrice() == 0.0){

@@ -2,13 +2,13 @@ package com.example.personmanagement.repository;
 
 import com.example.personmanagement.model.Person;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@ApplicationScoped
+@Stateless
 public class PersonRepository {
 
     @PersistenceContext
