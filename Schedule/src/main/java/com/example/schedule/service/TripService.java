@@ -5,6 +5,8 @@ import com.example.schedule.dto.*;
 import com.example.schedule.model.Trip;
 import com.example.schedule.repository.TripRepository;
 
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
@@ -16,14 +18,22 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ApplicationScoped
+@Stateless
 public class TripService {
 
-    @Inject
+    @EJB
     private TripRepository tripRepository;
-
-    @Inject
+    @EJB
     private TripConverter tripConverter;
+
+    public TripService(TripRepository tripRepository, TripConverter tripConverter) {
+        this.tripRepository = tripRepository;
+        this.tripConverter = tripConverter;
+    }
+
+    public TripService() {
+    }
+
     public TripDto create(TripCreateDto tripCreateDto) {
         ShipDto shipDto = getShip(tripCreateDto);
         Trip existingTrip = tripRepository.getTripByShipNumberAndDate(tripCreateDto);

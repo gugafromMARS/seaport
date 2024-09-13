@@ -4,7 +4,7 @@ package com.example.cargomanagement.controller;
 import com.example.cargomanagement.dto.CargoCreateDto;
 import com.example.cargomanagement.service.CargoService;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.net.URI;
@@ -13,8 +13,15 @@ import java.util.UUID;
 @Path("/cargo")
 public class CargoController {
 
-    @Inject
+    @EJB
     private CargoService cargoService;
+
+    public CargoController(CargoService cargoService) {
+        this.cargoService = cargoService;
+    }
+
+    public CargoController() {
+    }
 
     @POST
     @Consumes("application/json")

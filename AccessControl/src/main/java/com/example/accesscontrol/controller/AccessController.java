@@ -9,11 +9,18 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 
+
 @Path("/access")
 public class AccessController {
 
     @EJB
     private AccessService accessService;
+
+    public AccessController(AccessService accessService) {
+        this.accessService = accessService;
+    }
+    public AccessController() {
+    }
 
     @POST
     @Consumes("application/json")

@@ -7,18 +7,27 @@ import com.example.shipmanagement.dto.ShipDto;
 import com.example.shipmanagement.model.Ship;
 import com.example.shipmanagement.repository.ShipRepository;
 
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
-@ApplicationScoped
+@Stateless
 public class ShipService {
 
-    @Inject
+    @EJB
     private ShipConverter shipConverter;
-    @Inject
+    @EJB
     private ShipRepository shipRepository;
+    public ShipService(ShipConverter shipConverter, ShipRepository shipRepository) {
+        this.shipConverter = shipConverter;
+        this.shipRepository = shipRepository;
+    }
+
+    public ShipService() {
+    }
 
     public ShipDto createShip(ShipCreateDto shipCreateDto) {
         Ship existingShip = shipRepository.findByMMSI(shipCreateDto.getMmsi());

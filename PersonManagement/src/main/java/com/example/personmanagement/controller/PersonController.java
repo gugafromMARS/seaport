@@ -3,7 +3,7 @@ package com.example.personmanagement.controller;
 import com.example.personmanagement.dto.PersonCreateDto;
 import com.example.personmanagement.service.PersonService;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.net.URI;
@@ -11,8 +11,15 @@ import java.net.URI;
 @Path("/person")
 public class PersonController {
 
-    @Inject
+    @EJB
     private PersonService personService;
+
+    public PersonController(PersonService personService) {
+        this.personService = personService;
+    }
+
+    public PersonController() {
+    }
 
     @POST
     @Consumes("application/json")

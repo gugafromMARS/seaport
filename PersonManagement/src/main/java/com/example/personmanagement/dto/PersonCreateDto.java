@@ -58,4 +58,15 @@ public class PersonCreateDto {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "PersonCreateDto{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", cc=" + cc +
+                ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
+                ", nif=" + nif +
+                '}';
+    }
 }

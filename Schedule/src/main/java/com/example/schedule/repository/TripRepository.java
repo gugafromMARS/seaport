@@ -6,6 +6,7 @@ import com.example.schedule.dto.TripCreateDto;
 import com.example.schedule.model.Trip;
 import org.hibernate.Hibernate;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -16,7 +17,7 @@ import javax.ws.rs.core.Response;
 import java.time.LocalDate;
 import java.util.List;
 
-@ApplicationScoped
+@Stateless
 public class TripRepository {
 
     @PersistenceContext

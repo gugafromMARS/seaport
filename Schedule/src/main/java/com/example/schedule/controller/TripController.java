@@ -5,6 +5,7 @@ import com.example.schedule.dto.TripAddPersonDto;
 import com.example.schedule.dto.TripCreateDto;
 import com.example.schedule.service.TripService;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -13,8 +14,15 @@ import java.net.URI;
 @Path("/trip")
 public class TripController {
 
-    @Inject
+    @EJB
     private TripService tripService;
+
+    public TripController(TripService tripService) {
+        this.tripService = tripService;
+    }
+
+    public TripController() {
+    }
 
     @POST
     @Consumes("application/json")

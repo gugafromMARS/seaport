@@ -7,9 +7,10 @@ import com.example.cargomanagement.dto.ShipDto;
 import com.example.cargomanagement.model.Cargo;
 import com.example.cargomanagement.model.DateType;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 
-@ApplicationScoped
+@Stateless
 public class CargoConverter {
 
     public Cargo fromCreateDto(CargoCreateDto cargoCreateDto, ShipDto shipDto){

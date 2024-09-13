@@ -4,10 +4,10 @@ import com.example.personmanagement.dto.PersonCreateDto;
 import com.example.personmanagement.dto.PersonDto;
 import com.example.personmanagement.model.Person;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import javax.ejb.Stateless;
 
-@ApplicationScoped
+
+@Stateless
 public class PersonConverter {
 
     public Person fromCreateDto(PersonCreateDto personCreateDto){

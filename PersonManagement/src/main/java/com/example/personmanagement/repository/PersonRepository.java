@@ -2,13 +2,13 @@ package com.example.personmanagement.repository;
 
 import com.example.personmanagement.model.Person;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@ApplicationScoped
+@Stateless
 public class PersonRepository {
 
     @PersistenceContext
@@ -16,7 +16,7 @@ public class PersonRepository {
 
     @Transactional
     public void save(Person person){
-        entityManager.persist(person);
+       entityManager.persist(person);
     }
 
     public Person getByCC(int cc){
@@ -27,5 +27,10 @@ public class PersonRepository {
             return null;
         }
         return personList.get(0);
+    }
+
+    @Transactional
+    public void deleteAll(){
+        entityManager.createQuery("DELETE FROM Person").executeUpdate();
     }
 }

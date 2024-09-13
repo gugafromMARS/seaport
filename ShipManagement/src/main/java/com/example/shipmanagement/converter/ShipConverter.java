@@ -5,10 +5,11 @@ import com.example.shipmanagement.dto.ShipCreateDto;
 import com.example.shipmanagement.dto.ShipDto;
 import com.example.shipmanagement.model.Ship;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 
 
-@ApplicationScoped
+
+@Stateless
 public class ShipConverter {
 
 

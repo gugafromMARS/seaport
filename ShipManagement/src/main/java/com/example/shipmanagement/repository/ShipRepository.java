@@ -2,6 +2,7 @@ package com.example.shipmanagement.repository;
 
 import com.example.shipmanagement.model.Ship;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -11,7 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-@ApplicationScoped
+@Stateless
 public class ShipRepository {
 
     @PersistenceContext
