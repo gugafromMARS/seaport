@@ -22,13 +22,16 @@ import java.util.stream.Collectors;
 public class TripService {
 
     @EJB
-    private final TripRepository tripRepository;
+    private TripRepository tripRepository;
     @EJB
-    private final TripConverter tripConverter;
+    private TripConverter tripConverter;
 
     public TripService(TripRepository tripRepository, TripConverter tripConverter) {
         this.tripRepository = tripRepository;
         this.tripConverter = tripConverter;
+    }
+
+    public TripService() {
     }
 
     public TripDto create(TripCreateDto tripCreateDto) {

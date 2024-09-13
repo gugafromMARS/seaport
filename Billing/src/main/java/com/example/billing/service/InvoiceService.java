@@ -20,13 +20,16 @@ import java.util.stream.Collectors;
 public class InvoiceService {
 
     @EJB
-    private final InvoiceRepository invoiceRepository;
+    private InvoiceRepository invoiceRepository;
     @EJB
-    private final InvoiceConverter invoiceConverter;
+    private InvoiceConverter invoiceConverter;
 
     public InvoiceService(InvoiceRepository invoiceRepository, InvoiceConverter invoiceConverter) {
         this.invoiceRepository = invoiceRepository;
         this.invoiceConverter = invoiceConverter;
+    }
+
+    public InvoiceService() {
     }
 
     public InvoiceDto createInvoice(InvoiceCreateDto invoiceCreateDto) {

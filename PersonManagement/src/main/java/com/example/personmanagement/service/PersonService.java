@@ -3,9 +3,11 @@ package com.example.personmanagement.service;
 import com.example.personmanagement.converter.PersonConverter;
 import com.example.personmanagement.dto.PersonCreateDto;
 import com.example.personmanagement.dto.PersonDto;
+import com.example.personmanagement.exceptions.CustomWebApplicationException;
 import com.example.personmanagement.model.Person;
 import com.example.personmanagement.repository.PersonRepository;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
@@ -14,27 +16,36 @@ import javax.ws.rs.core.Response;
 @Stateless
 public class PersonService {
 
-    @Inject
+    @EJB
     private PersonConverter personConverter;
-    @Inject
+    @EJB
     private PersonRepository personRepository;
+
+    public PersonService(PersonConverter personConverter, PersonRepository personRepository) {
+        this.personConverter = personConverter;
+        this.personRepository = personRepository;
+    }
+
+    public PersonService() {
+    }
 
     public PersonDto createPerson(PersonCreateDto personCreateDto) {
         Person existingPerson = personRepository.getByCC(personCreateDto.getCc());
         if(existingPerson != null){
             throw new WebApplicationException("Person already exist", Response.Status.BAD_REQUEST);
         }
-        if(checkNIF(personCreateDto.getNif())){
-            existingPerson = personConverter.fromCreateDto(personCreateDto);
-            personRepository.save(existingPerson);
-            return personConverter.toDto(existingPerson);
-        } else{
-            throw new WebApplicationException("Nif is not valid", Response.Status.BAD_REQUEST);
-        }
+        checkNIF(personCreateDto.getNif());
+        existingPerson = personConverter.fromCreateDto(personCreateDto);
+        personRepository.save(existingPerson);
+        return personConverter.toDto(existingPerson);
+
     }
 
-    private boolean checkNIF(int nif){
+    public void checkNIF(int nif){
         String[] nifReformatted = String.valueOf(nif).split("");
+        if(nifReformatted.length != 9){
+            throw new CustomWebApplicationException("Nif is not valid", 400);
+        }
         int total = 0;
         int nifSize = nifReformatted.length;
         for(int i = 0; i < 8; i++){
@@ -48,7 +59,9 @@ public class PersonService {
         }else {
             controlDigit = 11 - rest;
         }
-        return Integer.valueOf(nifReformatted[8]) == controlDigit;
+        if(Integer.valueOf(nifReformatted[8]) != controlDigit){
+            throw new CustomWebApplicationException("Nif is not valid", 400);
+        }
     }
 
     public PersonDto getPerson(int ccNumber) {

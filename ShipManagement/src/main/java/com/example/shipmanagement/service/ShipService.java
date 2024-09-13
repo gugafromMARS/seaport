@@ -18,14 +18,16 @@ import javax.ws.rs.core.Response;
 public class ShipService {
 
     @EJB
-    private final ShipConverter shipConverter;
+    private ShipConverter shipConverter;
     @EJB
-    private final ShipRepository shipRepository;
+    private ShipRepository shipRepository;
     public ShipService(ShipConverter shipConverter, ShipRepository shipRepository) {
         this.shipConverter = shipConverter;
         this.shipRepository = shipRepository;
     }
 
+    public ShipService() {
+    }
 
     public ShipDto createShip(ShipCreateDto shipCreateDto) {
         Ship existingShip = shipRepository.findByMMSI(shipCreateDto.getMmsi());

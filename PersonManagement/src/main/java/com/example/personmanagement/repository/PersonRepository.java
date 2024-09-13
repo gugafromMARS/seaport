@@ -16,7 +16,7 @@ public class PersonRepository {
 
     @Transactional
     public void save(Person person){
-        entityManager.persist(person);
+       entityManager.persist(person);
     }
 
     public Person getByCC(int cc){
@@ -27,5 +27,10 @@ public class PersonRepository {
             return null;
         }
         return personList.get(0);
+    }
+
+    @Transactional
+    public void deleteAll(){
+        entityManager.createQuery("DELETE FROM Person").executeUpdate();
     }
 }

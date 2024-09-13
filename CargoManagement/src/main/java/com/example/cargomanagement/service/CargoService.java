@@ -25,13 +25,16 @@ import java.util.stream.Collectors;
 public class CargoService {
 
     @EJB
-    private final CargoRepository cargoRepository;
+    private CargoRepository cargoRepository;
     @EJB
-    private final CargoConverter converter;
+    private CargoConverter converter;
 
     public CargoService(CargoRepository cargoRepository, CargoConverter converter) {
         this.cargoRepository = cargoRepository;
         this.converter = converter;
+    }
+
+    public CargoService() {
     }
 
     public CargoDto createCargo(CargoCreateDto cargoCreateDto) {
