@@ -1,7 +1,7 @@
 package com.example.shipmanagement.service;
 
 
-import com.example.shipmanagement.converter.ShipConverter;
+import com.example.shipmanagement.converter.ShipConverterImp;
 import com.example.shipmanagement.dto.ShipCreateDto;
 import com.example.shipmanagement.dto.ShipDto;
 import com.example.shipmanagement.model.Ship;
@@ -9,8 +9,6 @@ import com.example.shipmanagement.repository.ShipRepository;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
@@ -18,11 +16,11 @@ import javax.ws.rs.core.Response;
 public class ShipService {
 
     @EJB
-    private ShipConverter shipConverter;
+    private ShipConverterImp shipConverterImp;
     @EJB
     private ShipRepository shipRepository;
-    public ShipService(ShipConverter shipConverter, ShipRepository shipRepository) {
-        this.shipConverter = shipConverter;
+    public ShipService(ShipConverterImp shipConverterImp, ShipRepository shipRepository) {
+        this.shipConverterImp = shipConverterImp;
         this.shipRepository = shipRepository;
     }
 
@@ -34,9 +32,9 @@ public class ShipService {
         if(existingShip != null){
             throw new WebApplicationException("Ship already registered", Response.Status.BAD_REQUEST);
         }
-        existingShip = shipConverter.fromCreateDto(shipCreateDto);
+        existingShip = shipConverterImp.fromCreateDto(shipCreateDto);
         shipRepository.save(existingShip);
-        return shipConverter.toDto(existingShip);
+        return shipConverterImp.toDto(existingShip);
     }
 
 
@@ -45,7 +43,7 @@ public class ShipService {
         if(existingShip == null){
             throw  new WebApplicationException("Ship not found", Response.Status.NOT_FOUND);
         }
-        return shipConverter.toDto(existingShip);
+        return shipConverterImp.toDto(existingShip);
     }
 
 

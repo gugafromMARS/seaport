@@ -1,6 +1,6 @@
 package com.example.personmanagement.unit;
 
-import com.example.personmanagement.converter.PersonConverter;
+import com.example.personmanagement.converter.PersonConverterImp;
 import com.example.personmanagement.dto.PersonCreateDto;
 import com.example.personmanagement.dto.PersonDto;
 import com.example.personmanagement.exceptions.CustomWebApplicationException;
@@ -14,10 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import javax.ejb.ApplicationException;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -27,7 +23,7 @@ public class UnitTest {
     private PersonRepository personRepository;
 
     @Mock
-    private PersonConverter personConverter;
+    private PersonConverterImp personConverterImp;
 
     @InjectMocks
     private PersonService personService;
@@ -77,8 +73,8 @@ public class UnitTest {
         personCreateDto.setNif(271570512); // Aqui, o NIF é considerado válido
 
         when(personRepository.getByCC(personCreateDto.getCc())).thenReturn(null);
-        when(personConverter.fromCreateDto(personCreateDto)).thenReturn(person);
-        when(personConverter.toDto(person)).thenReturn(personDto);
+        when(personConverterImp.fromCreateDto(personCreateDto)).thenReturn(person);
+        when(personConverterImp.toDto(person)).thenReturn(personDto);
 
         PersonDto createdPerson = personService.createPerson(personCreateDto);
 
