@@ -1,6 +1,6 @@
 package com.example.personmanagement.service;
 
-import com.example.personmanagement.converter.PersonConverter;
+import com.example.personmanagement.converter.PersonConverterImp;
 import com.example.personmanagement.dto.PersonCreateDto;
 import com.example.personmanagement.dto.PersonDto;
 import com.example.personmanagement.exceptions.CustomWebApplicationException;
@@ -9,7 +9,6 @@ import com.example.personmanagement.repository.PersonRepository;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
@@ -17,12 +16,12 @@ import javax.ws.rs.core.Response;
 public class PersonService {
 
     @EJB
-    private PersonConverter personConverter;
+    private PersonConverterImp personConverterImp;
     @EJB
     private PersonRepository personRepository;
 
-    public PersonService(PersonConverter personConverter, PersonRepository personRepository) {
-        this.personConverter = personConverter;
+    public PersonService(PersonConverterImp personConverterImp, PersonRepository personRepository) {
+        this.personConverterImp = personConverterImp;
         this.personRepository = personRepository;
     }
 
@@ -35,9 +34,9 @@ public class PersonService {
             throw new WebApplicationException("Person already exist", Response.Status.BAD_REQUEST);
         }
         checkNIF(personCreateDto.getNif());
-        existingPerson = personConverter.fromCreateDto(personCreateDto);
+        existingPerson = personConverterImp.fromCreateDto(personCreateDto);
         personRepository.save(existingPerson);
-        return personConverter.toDto(existingPerson);
+        return personConverterImp.toDto(existingPerson);
 
     }
 
@@ -69,6 +68,6 @@ public class PersonService {
         if(existingPerson == null){
             throw new WebApplicationException("User not found", Response.Status.NOT_FOUND);
         }
-        return personConverter.toDto(existingPerson);
+        return personConverterImp.toDto(existingPerson);
     }
 }

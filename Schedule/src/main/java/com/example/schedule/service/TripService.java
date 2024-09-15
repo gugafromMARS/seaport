@@ -1,14 +1,12 @@
 package com.example.schedule.service;
 
-import com.example.schedule.converter.TripConverter;
+import com.example.schedule.converter.TripConverterImp;
 import com.example.schedule.dto.*;
 import com.example.schedule.model.Trip;
 import com.example.schedule.repository.TripRepository;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -24,11 +22,11 @@ public class TripService {
     @EJB
     private TripRepository tripRepository;
     @EJB
-    private TripConverter tripConverter;
+    private TripConverterImp tripConverterImp;
 
-    public TripService(TripRepository tripRepository, TripConverter tripConverter) {
+    public TripService(TripRepository tripRepository, TripConverterImp tripConverterImp) {
         this.tripRepository = tripRepository;
-        this.tripConverter = tripConverter;
+        this.tripConverterImp = tripConverterImp;
     }
 
     public TripService() {
@@ -40,9 +38,9 @@ public class TripService {
         if(existingTrip != null){
             throw new WebApplicationException("Trip already registered", Response.Status.BAD_REQUEST);
         }
-        existingTrip = tripConverter.fromCreateDto(tripCreateDto, shipDto);
+        existingTrip = tripConverterImp.fromCreateDto(tripCreateDto, shipDto);
         tripRepository.save(existingTrip);
-        return tripConverter.toDto(existingTrip);
+        return tripConverterImp.toDto(existingTrip);
     }
 
     private ShipDto getShip(TripCreateDto tripCreateDto){
@@ -66,7 +64,7 @@ public class TripService {
     }
 
     public List<TripPersonDto> getTripByPerson(int cc) {
-        return tripConverter.fromCcOfPerson(tripRepository.getTripFromCC(cc));
+        return tripConverterImp.fromCcOfPerson(tripRepository.getTripFromCC(cc));
     }
 
     public TripDto updateTrip(TripAddPersonDto tripAddPersonDto) {
@@ -83,15 +81,15 @@ public class TripService {
         }
         existingTrip.getPersonList().add(personDto);
         tripRepository.merge(existingTrip);
-        return tripConverter.toDto(existingTrip);
+        return tripConverterImp.toDto(existingTrip);
     }
 
     public List<TripShipDto> getTripsByShip(int mmsi) {
-        return tripConverter.fromListOfTrips(tripRepository.getTripFromMMSI(mmsi));
+        return tripConverterImp.fromListOfTrips(tripRepository.getTripFromMMSI(mmsi));
     }
 
     public TripDto getTrip(Long tripId) {
-        return tripConverter.toDto(tripRepository.getById(tripId));
+        return tripConverterImp.toDto(tripRepository.getById(tripId));
     }
 
     public void deleteById(Long tripId) {

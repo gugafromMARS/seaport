@@ -1,7 +1,7 @@
 package com.example.cargomanagement.service;
 
 
-import com.example.cargomanagement.converter.CargoConverter;
+import com.example.cargomanagement.converter.CargoConverterImp;
 import com.example.cargomanagement.dto.CargoCreateDto;
 import com.example.cargomanagement.dto.CargoDto;
 import com.example.cargomanagement.dto.ShipDto;
@@ -10,7 +10,6 @@ import com.example.cargomanagement.repository.CargoRepository;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -27,9 +26,9 @@ public class CargoService {
     @EJB
     private CargoRepository cargoRepository;
     @EJB
-    private CargoConverter converter;
+    private CargoConverterImp converter;
 
-    public CargoService(CargoRepository cargoRepository, CargoConverter converter) {
+    public CargoService(CargoRepository cargoRepository, CargoConverterImp converter) {
         this.cargoRepository = cargoRepository;
         this.converter = converter;
     }
