@@ -66,7 +66,7 @@ public class UnitTest {
 
         String expectedMessage = "Nif is not valid";
         String actualMessage = exception.getMessage();
-        System.out.println(actualMessage);
+        assertEquals(expectedMessage, actualMessage);
 
     }
 
