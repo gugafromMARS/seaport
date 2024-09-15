@@ -7,12 +7,10 @@ import com.example.shipmanagement.model.Ship;
 
 import javax.ejb.Stateless;
 
-
-
 @Stateless
 public class ShipConverterImp implements ShipConverter{
 
-
+    @Override
     public Ship fromCreateDto (ShipCreateDto shipCreateDto){
         return Ship.builder()
                 .withName(shipCreateDto.getName())
@@ -23,7 +21,7 @@ public class ShipConverterImp implements ShipConverter{
                 .withOwnerEmail(shipCreateDto.getOwnerEmail())
                 .build();
     }
-
+    @Override
     public ShipDto toDto(Ship ship){
         return ShipDto.builder()
                 .withName(ship.getName())

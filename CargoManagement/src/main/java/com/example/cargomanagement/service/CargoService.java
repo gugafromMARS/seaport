@@ -1,6 +1,7 @@
 package com.example.cargomanagement.service;
 
 
+import com.example.cargomanagement.converter.CargoConverter;
 import com.example.cargomanagement.converter.CargoConverterImp;
 import com.example.cargomanagement.dto.CargoCreateDto;
 import com.example.cargomanagement.dto.CargoDto;
@@ -26,9 +27,9 @@ public class CargoService {
     @EJB
     private CargoRepository cargoRepository;
     @EJB
-    private CargoConverterImp converter;
+    private CargoConverter converter;
 
-    public CargoService(CargoRepository cargoRepository, CargoConverterImp converter) {
+    public CargoService(CargoRepository cargoRepository, CargoConverter converter) {
         this.cargoRepository = cargoRepository;
         this.converter = converter;
     }
