@@ -49,7 +49,7 @@ public class CargoService {
 
     private ShipDto getShip(int mmsi){
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target("http://localhost:8080/ShipManagement-1.0-SNAPSHOT/api//mmsi/" + mmsi);
+        WebTarget webTarget = client.target("http://localhost:8080/ShipManagement-1.0-SNAPSHOT/api/ship/mmsi/" + mmsi);
         Response response = webTarget.request(MediaType.APPLICATION_JSON).get();
         if(response.getStatus() != 200){
             throw new WebApplicationException("Ship not found", Response.Status.NOT_FOUND);

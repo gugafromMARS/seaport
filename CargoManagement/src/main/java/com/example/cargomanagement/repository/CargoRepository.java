@@ -53,12 +53,12 @@ public class CargoRepository {
     }
 
     public Cargo getCargoByUUID(UUID uuid){
-        Cargo existingCargo = entityManager.createQuery("FROM Cargo c WHERE c.cargoNumber = :uuid", Cargo.class)
+        List<Cargo> existingCargo = entityManager.createQuery("FROM Cargo c WHERE c.cargoNumber = :uuid", Cargo.class)
                 .setParameter("uuid", uuid)
-                .getSingleResult();
-        if(existingCargo == null){
-            throw new WebApplicationException("Cargo not found", Response.Status.NOT_FOUND);
+                .getResultList();
+        if(existingCargo.isEmpty()){
+            return null;
         }
-        return existingCargo;
+            return existingCargo.get(0);
     }
 }
