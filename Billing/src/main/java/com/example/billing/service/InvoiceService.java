@@ -1,6 +1,7 @@
 package com.example.billing.service;
 
 
+import com.example.billing.converter.InvoiceConverter;
 import com.example.billing.converter.InvoiceConverterImp;
 import com.example.billing.dto.InvoiceCreateDto;
 import com.example.billing.dto.InvoiceDto;
@@ -20,11 +21,11 @@ public class InvoiceService {
     @EJB
     private InvoiceRepository invoiceRepository;
     @EJB
-    private InvoiceConverterImp invoiceConverterImp;
+    private InvoiceConverter invoiceConverter;
 
-    public InvoiceService(InvoiceRepository invoiceRepository, InvoiceConverterImp invoiceConverterImp) {
+    public InvoiceService(InvoiceRepository invoiceRepository, InvoiceConverter invoiceConverter) {
         this.invoiceRepository = invoiceRepository;
-        this.invoiceConverterImp = invoiceConverterImp;
+        this.invoiceConverter = invoiceConverter;
     }
 
     public InvoiceService() {
@@ -34,13 +35,13 @@ public class InvoiceService {
         if(invoiceCreateDto.getDate().isEmpty() || invoiceCreateDto.getPrice() == 0.0){
             throw new WebApplicationException("Date is empty", Response.Status.BAD_REQUEST);
         }
-        Invoice newInvoice = invoiceConverterImp.fromCreateDto(invoiceCreateDto);
+        Invoice newInvoice = invoiceConverter.fromCreateDto(invoiceCreateDto);
         invoiceRepository.save(newInvoice);
-        return invoiceConverterImp.toDto(newInvoice);
+        return invoiceConverter.toDto(newInvoice);
     }
 
     public List<InvoiceDto> getInvoices(int nif) {
         List<Invoice> invoiceList = invoiceRepository.getByNif(nif);
-        return invoiceList.stream().map(invoice -> invoiceConverterImp.toDto(invoice)).collect(Collectors.toList());
+        return invoiceList.stream().map(invoice -> invoiceConverter.toDto(invoice)).collect(Collectors.toList());
     }
 }

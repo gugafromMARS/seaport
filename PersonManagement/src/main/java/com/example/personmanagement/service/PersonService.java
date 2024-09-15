@@ -1,5 +1,6 @@
 package com.example.personmanagement.service;
 
+import com.example.personmanagement.converter.PersonConverter;
 import com.example.personmanagement.converter.PersonConverterImp;
 import com.example.personmanagement.dto.PersonCreateDto;
 import com.example.personmanagement.dto.PersonDto;
@@ -16,12 +17,12 @@ import javax.ws.rs.core.Response;
 public class PersonService {
 
     @EJB
-    private PersonConverterImp personConverterImp;
+    private PersonConverter personConverter;
     @EJB
     private PersonRepository personRepository;
 
-    public PersonService(PersonConverterImp personConverterImp, PersonRepository personRepository) {
-        this.personConverterImp = personConverterImp;
+    public PersonService(PersonConverter personConverter, PersonRepository personRepository) {
+        this.personConverter = personConverter;
         this.personRepository = personRepository;
     }
 
@@ -34,9 +35,9 @@ public class PersonService {
             throw new WebApplicationException("Person already exist", Response.Status.BAD_REQUEST);
         }
         checkNIF(personCreateDto.getNif());
-        existingPerson = personConverterImp.fromCreateDto(personCreateDto);
+        existingPerson = personConverter.fromCreateDto(personCreateDto);
         personRepository.save(existingPerson);
-        return personConverterImp.toDto(existingPerson);
+        return personConverter.toDto(existingPerson);
 
     }
 
@@ -68,6 +69,6 @@ public class PersonService {
         if(existingPerson == null){
             throw new WebApplicationException("User not found", Response.Status.NOT_FOUND);
         }
-        return personConverterImp.toDto(existingPerson);
+        return personConverter.toDto(existingPerson);
     }
 }

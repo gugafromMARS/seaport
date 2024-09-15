@@ -14,8 +14,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Add: Unit and integration tests for person management microservice">
+    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Fix: converter dependency of converter in service layer.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/service/AccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/service/AccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schedule/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +32,14 @@
         <option value="Enum" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task/tests_and_change_annotations" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,12 +64,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "task/access__service",
     "last_opened_file_path": "/Users/goncalocravo/Desktop/Coding/Projects/Seaport",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14450866",
     "project.structure.side.proportion": "0.2",
@@ -72,7 +78,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UnitTest.shouldThrowExceptionIfNifIsInvalid">
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 13.0.0.Final1">
     <configuration name="JBoss/WildFly 13.0.0.Final1" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 13.0.0.Final1" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -276,6 +282,7 @@
       <workItem from="1725725202890" duration="11527000" />
       <workItem from="1726141508107" duration="264000" />
       <workItem from="1726217612314" duration="924000" />
+      <workItem from="1726418379152" duration="5861000" />
     </task>
     <task id="LOCAL-00001" summary="Add: schedule microservice implementation">
       <option name="closed" value="true" />
@@ -325,7 +332,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725636943064</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add: add some verification about throw message in person service when nif is not valid">
+      <option name="closed" value="true" />
+      <created>1726418578524</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726418578524</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add: interfaces for all converters">
+      <option name="closed" value="true" />
+      <created>1726421315174</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726421315174</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix: converter dependency of converter in service layer.">
+      <option name="closed" value="true" />
+      <created>1726422228378</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1726422228378</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +369,25 @@
     <MESSAGE value="Add: Cargo management basic structure" />
     <MESSAGE value="Add: Access microservice implementation" />
     <MESSAGE value="Add: change all annotations from converters, controllers, services and repository layers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: change all annotations from converters, controllers, services and repository layers." />
+    <MESSAGE value="Add: add some verification about throw message in person service when nif is not valid" />
+    <MESSAGE value="Add: interfaces for all converters" />
+    <MESSAGE value="Fix: converter dependency of converter in service layer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix: converter dependency of converter in service layer." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/service/TripService.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/service/TripService.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

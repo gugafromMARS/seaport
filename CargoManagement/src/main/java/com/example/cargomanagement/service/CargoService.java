@@ -1,6 +1,7 @@
 package com.example.cargomanagement.service;
 
 
+import com.example.cargomanagement.converter.CargoConverter;
 import com.example.cargomanagement.converter.CargoConverterImp;
 import com.example.cargomanagement.dto.CargoCreateDto;
 import com.example.cargomanagement.dto.CargoDto;
@@ -26,9 +27,9 @@ public class CargoService {
     @EJB
     private CargoRepository cargoRepository;
     @EJB
-    private CargoConverterImp converter;
+    private CargoConverter converter;
 
-    public CargoService(CargoRepository cargoRepository, CargoConverterImp converter) {
+    public CargoService(CargoRepository cargoRepository, CargoConverter converter) {
         this.cargoRepository = cargoRepository;
         this.converter = converter;
     }
@@ -48,7 +49,7 @@ public class CargoService {
 
     private ShipDto getShip(int mmsi){
         Client client = ClientBuilder.newClient();
-        WebTarget webTarget = client.target("http://localhost:8080/ShipManagement-1.0-SNAPSHOT/api//mmsi/" + mmsi);
+        WebTarget webTarget = client.target("http://localhost:8080/ShipManagement-1.0-SNAPSHOT/api/ship/mmsi/" + mmsi);
         Response response = webTarget.request(MediaType.APPLICATION_JSON).get();
         if(response.getStatus() != 200){
             throw new WebApplicationException("Ship not found", Response.Status.NOT_FOUND);
