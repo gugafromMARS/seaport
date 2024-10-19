@@ -91,7 +91,7 @@ public class Invoice {
         }
 
         public InvoiceBuilder withPrice(double amount){
-            invoice.setPrice(amount*(23/100));
+            invoice.setPrice(amount*1.23);
             return this;
         }
         public InvoiceBuilder withVat(){

@@ -14,12 +14,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Fix: converter dependency of converter in service layer.">
+    <list default="true" id="caf8aa3e-e919-4647-ada7-b33c6c574d73" name="Changes" comment="Fix: cargo microservice request to ship microservice by mmsi">
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/bill/Bill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/PersonDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/service/AccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/AccessControl/src/main/java/com/example/accesscontrol/service/AccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/repository/CargoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CargoManagement/src/main/java/com/example/cargomanagement/service/CargoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schedule/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Schedule/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/controller/InvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/converter/InvoiceConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/converter/InvoiceConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/converter/InvoiceConverterImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/converter/InvoiceConverterImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/InvoiceCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/dto/InvoiceCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/email/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/model/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/model/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Billing/src/main/java/com/example/billing/service/InvoiceService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +36,8 @@
       <list>
         <option value="Enum" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "task/access__service",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/goncalocravo/Desktop/Coding/Projects/Seaport",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -74,6 +79,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.14450866",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings",
     "spring.configuration.checksum": "780c462e85ba4399a5d42e88f69a15ca",
     "vue.rearranger.settings.migration": "true"
   }
@@ -283,6 +289,8 @@
       <workItem from="1726141508107" duration="264000" />
       <workItem from="1726217612314" duration="924000" />
       <workItem from="1726418379152" duration="5861000" />
+      <workItem from="1728206011236" duration="768000" />
+      <workItem from="1728843139302" duration="8664000" />
     </task>
     <task id="LOCAL-00001" summary="Add: schedule microservice implementation">
       <option name="closed" value="true" />
@@ -362,6 +370,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add: schedule microservice implementation" />
     <MESSAGE value="Add: nif validator checker in person microservice and add a column in person entity for nif field." />
@@ -373,21 +392,5 @@
     <MESSAGE value="Add: interfaces for all converters" />
     <MESSAGE value="Fix: converter dependency of converter in service layer." />
     <option name="LAST_COMMIT_MESSAGE" value="Fix: converter dependency of converter in service layer." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/service/TripService.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Schedule/src/main/java/com/example/schedule/service/TripService.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

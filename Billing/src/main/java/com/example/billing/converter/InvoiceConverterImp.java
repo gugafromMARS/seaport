@@ -3,6 +3,7 @@ package com.example.billing.converter;
 
 import com.example.billing.dto.InvoiceCreateDto;
 import com.example.billing.dto.InvoiceDto;
+import com.example.billing.dto.PersonDto;
 import com.example.billing.model.Invoice;
 
 import javax.ejb.Stateless;
@@ -11,10 +12,10 @@ import javax.ejb.Stateless;
 public class InvoiceConverterImp implements InvoiceConverter{
 
 
-    public Invoice fromCreateDto(InvoiceCreateDto invoiceCreateDto){
+    public Invoice fromCreateDto(InvoiceCreateDto invoiceCreateDto, PersonDto personDto){
         return Invoice.builder()
-                .withPersonName(invoiceCreateDto.getPersonName())
-                .withNif(invoiceCreateDto.getPersonNif())
+                .withPersonName(personDto.getName())
+                .withNif(personDto.getNif())
                 .withDate(invoiceCreateDto.getDate())
                 .withPrice(invoiceCreateDto.getPrice())
                 .withVat()

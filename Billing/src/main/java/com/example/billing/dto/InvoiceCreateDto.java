@@ -1,17 +1,12 @@
 package com.example.billing.dto;
 
 public class InvoiceCreateDto {
-    private String personName;
-    private int personNif;
+    private int personCC;
     private String date;
     private double price;
 
-    public String getPersonName() {
-        return personName;
-    }
-
-    public int getPersonNif() {
-        return personNif;
+    public int getPersonCC() {
+        return personCC;
     }
 
     public String getDate() {

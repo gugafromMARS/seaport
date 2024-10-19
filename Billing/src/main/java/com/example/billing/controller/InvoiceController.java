@@ -7,9 +7,8 @@ import com.example.billing.service.InvoiceService;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 
@@ -27,6 +26,8 @@ public class InvoiceController {
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response create(InvoiceCreateDto invoiceCreateDto){
         return Response.created(URI.create("/invoice"))
                 .entity(invoiceService.createInvoice(invoiceCreateDto))
